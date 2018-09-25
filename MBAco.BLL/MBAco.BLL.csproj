@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B93B539-7914-46A6-A82B-0EABD61CCCBD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MBAco.BLL</RootNamespace>
+    <AssemblyName>MBAco.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClasses\BusinessListBase.cs" />
+    <Compile Include="BaseClasses\Condition.cs" />
+    <Compile Include="BaseClasses\IBusinessBase.cs" />
+    <Compile Include="BaseClasses\ISearchable.cs" />
+    <Compile Include="BaseClasses\PredicateBuilder.cs" />
+    <Compile Include="BaseClasses\SearchItem.cs" />
+    <Compile Include="Generated\AnalayseParameterBiz.generated.cs" />
+    <Compile Include="Generated\AnalayseParameterListBiz.generated.cs" />
+    <Compile Include="Generated\AnalayseParameterServices.generated.cs" />
+    <Compile Include="Generated\AnalyseParameterTypeBiz.generated.cs" />
+    <Compile Include="Generated\AnalyseParameterTypeListBiz.generated.cs" />
+    <Compile Include="Generated\AnalyseParameterTypeServices.generated.cs" />
+    <Compile Include="Generated\ContactBiz.generated.cs" />
+    <Compile Include="Generated\ContactListBiz.generated.cs" />
+    <Compile Include="Generated\ContactServices.generated.cs" />
+    <Compile Include="Generated\CultureBiz.generated.cs" />
+    <Compile Include="Generated\CultureListBiz.generated.cs" />
+    <Compile Include="Generated\CultureServices.generated.cs" />
+    <Compile Include="Generated\CustomerBiz.generated.cs" />
+    <Compile Include="Generated\CustomerContactBiz.generated.cs" />
+    <Compile Include="Generated\CustomerContactListBiz.generated.cs" />
+    <Compile Include="Generated\CustomerContactServices.generated.cs" />
+    <Compile Include="Generated\CustomerListBiz.generated.cs" />
+    <Compile Include="Generated\CustomerServices.generated.cs" />
+    <Compile Include="Generated\DailyAnalyseReportBiz.generated.cs" />
+    <Compile Include="Generated\DailyAnalyseReportListBiz.generated.cs" />
+    <Compile Include="Generated\DailyAnalyseReportServices.generated.cs" />
+    <Compile Include="Generated\NotificationMessageBiz.generated.cs" />
+    <Compile Include="Generated\NotificationMessageListBiz.generated.cs" />
+    <Compile Include="Generated\NotificationMessageServices.generated.cs" />
+    <Compile Include="Generated\NotificationMessageTypeBiz.generated.cs" />
+    <Compile Include="Generated\NotificationMessageTypeListBiz.generated.cs" />
+    <Compile Include="Generated\NotificationMessageTypeServices.generated.cs" />
+    <Compile Include="Generated\ProcedureParameterBiz.generated.cs" />
+    <Compile Include="Generated\ProcedureParameterListBiz.generated.cs" />
+    <Compile Include="Generated\ProcedureParameterServices.generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MBAco.BusinessModel\MBAco.BusinessModel.csproj">
+      <Project>{999AA2AC-B310-431A-B1FE-021D6FC67F0F}</Project>
+      <Name>MBAco.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MBAco.DAL\MBAco.DAL.csproj">
+      <Project>{8B059804-6115-447B-864E-8D744B544327}</Project>
+      <Name>MBAco.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

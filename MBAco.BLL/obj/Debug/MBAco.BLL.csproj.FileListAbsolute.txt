@@ -1,0 +1,12 @@
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.BLL.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.BLL.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.BusinessModel.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.DAL.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.BusinessModel.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.DAL.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\bin\Debug\MBAco.DAL.dll.config
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\obj\Debug\MBAco.BLL.csprojAssemblyReference.cache
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\obj\Debug\MBAco.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\obj\Debug\MBAco.BLL.csproj.CopyComplete
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\obj\Debug\MBAco.BLL.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BLL\obj\Debug\MBAco.BLL.pdb
