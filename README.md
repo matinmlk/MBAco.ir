@@ -15,15 +15,29 @@ Creating a Dynamic Chart from Dynamic parameters was one of the important challe
 
 Solution is consists of different projects to separate the concern of the steps from Back-end related data preparation tasks to front-end Presentation of the codes.
 
-MBAco DAL - Data Access Layer 
+#MBAco DAL - Data Access Layer 
 
-MBAco BLL - Business Logic Layer 
+Important task in this layer is creating database object of each table or stored procedure to make it available to do more data manipulation. objects of this layer mostly started with "tbl" prefix and showing the differences of them with business objects.
 
-MBAco Business Model Layer
+The dbml file inside the project is available in pdf format from this address. this project used Linq to SQL to connect and run queries on the backend side. Most of the classes are inherited from the base class to perform the CRUD operation and they are partial for special queries needed in different interactions.
 
-MBAco Common - Data Access Layer 
+https://github.com/matinmlk/MBAco.ir/blob/master/mbaco%20database%20design.pdf - automatic!
 
-MBAco BLL.Test - Data Access Layer 
+#MBAco BLL - Business Logic Layer 
 
-MBAco - MVC.Net Web project 
+This Layer is responsible to interact with the DAL to prepare and fill data in the lists and objects of Businiess Model to use inside the MVC web application. All methods inside BLL needs to be optimized and well tested before using inside the application. 
 
+#MBAco Business Model Layer
+The Definition of the Classes inside the application which are the main reference for passing and creating objects. This project is also the Model definition for MVC architecture but extracted as a project.
+
+#MBAco Common
+
+Codes which may use in other projects as common reusable sources like email configuration, MD5 security and ...
+
+#MBAco BLL.Test - Data Access Layer 
+
+Unit tests needed to be implemented for the BLL.
+
+#MBAco - MVC.Net Web project 
+
+Presentation and mostly front-end coding without any data manipulation for represent to users.
