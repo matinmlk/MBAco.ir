@@ -1,0 +1,6 @@
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BusinessModel\bin\Debug\MBAco.BusinessModel.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BusinessModel\bin\Debug\MBAco.BusinessModel.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BusinessModel\obj\Debug\MBAco.BusinessModel.csproj.CoreCompileInputs.cache
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BusinessModel\obj\Debug\MBAco.BusinessModel.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BusinessModel\obj\Debug\MBAco.BusinessModel.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.BusinessModel\obj\Debug\MBAco.BusinessModel.csprojAssemblyReference.cache
