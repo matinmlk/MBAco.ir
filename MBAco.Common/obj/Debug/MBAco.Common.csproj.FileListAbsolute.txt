@@ -1,0 +1,9 @@
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\obj\Debug\MBAco.Common.csprojAssemblyReference.cache
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\obj\Debug\MBAco.Common.csproj.CoreCompileInputs.cache
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\bin\Debug\MBAco.Common.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\bin\Debug\MBAco.Common.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\bin\Debug\NLog.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\bin\Debug\NLog.xml
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\obj\Debug\MBAco.Common.csproj.CopyComplete
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\obj\Debug\MBAco.Common.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.Common\obj\Debug\MBAco.Common.pdb
