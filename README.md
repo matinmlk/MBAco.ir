@@ -34,7 +34,7 @@ __MBAco Common__
 
 Codes which may use in other projects as common reusable sources like email configuration, MD5 security and ...
 
-__MBAco BLL.Test - Data Access Layer__
+__MBAco BLL.Test - Business Logic Layer Tests__
 
 Unit tests needed to be implemented for the BLL.
 
