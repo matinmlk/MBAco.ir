@@ -4,6 +4,7 @@ More information about the Mohafezan Company is available on mbaco.co website.
 
 This project is designed to improve monthly and annual report of customers based on the condition of the circulated water inside the chemical plant in order to normalize the condition for higher maintainability of piping structures.
 
+![alt text](https://github.com/matinmlk/MBAco.ir/blob/master/showpic%20(2).jpeg)
 
 System is only available for the authurized users and they can have different roles to interact with it. Membership manager in this system was based on the .Net memebership provider and as an extension Customers and contacts of the system created the hiararchy of the users manager makes it possible to define any number of users with different roles with admin role. Each roles in the system has different access from sending parameters by ANALYSER to approve the parameters by APPROVER and make it available to report by TECHHEAD. And finally each customer should view the monthly report by email or direct access with CUSTOMER access to the system.
 
