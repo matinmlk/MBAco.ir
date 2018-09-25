@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mbaco" Class="MBAcoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=server.shahmat.ir;Initial Catalog=mbaco;Persist Security Info=True;User ID=sa" SettingsObjectName="MBAco.DAL.Properties.Settings" SettingsPropertyName="mbacoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_AnalayseParameter" Member="tbl_AnalayseParameters">
+    <Type Name="tbl_AnalayseParameter">
+      <Column Name="AnalayseParameterID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Symbol" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AnalyseParameterType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_AnalayseParameter_tbl_ProcedureParameter" Member="tbl_ProcedureParameters" ThisKey="AnalayseParameterID" OtherKey="AnalayseParameterID" Type="tbl_ProcedureParameter" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ProcedureParameter" Member="tbl_ProcedureParameters">
+    <Type Name="tbl_ProcedureParameter">
+      <Column Name="ProcedureParameterID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnalayseParameterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DangerMaxLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DangerMinLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WarningMaxLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WarningMinLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PossibleMaxLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PossibleMinLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DangerMaxMessage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DangerMinMessage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WarningMaxMessage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WarningMinMessage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PossibleMaxMessage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PossibleMinMessage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_ProcedureParameter_tbl_DailyAnalyseReport" Member="tbl_DailyAnalyseReports" ThisKey="ProcedureParameterID" OtherKey="ProcedureParameterID" Type="tbl_DailyAnalyseReport" />
+      <Association Name="tbl_AnalayseParameter_tbl_ProcedureParameter" Member="tbl_AnalayseParameter" ThisKey="AnalayseParameterID" OtherKey="AnalayseParameterID" Type="tbl_AnalayseParameter" IsForeignKey="true" />
+      <Association Name="tbl_Customer_tbl_ProcedureParameter" Member="tbl_Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_Customer" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter" Member="tbl_NotificationMessage" ThisKey="DangerMaxMessage" OtherKey="NotificationMessageID" Type="tbl_NotificationMessage" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter1" Member="tbl_NotificationMessage1" ThisKey="DangerMinMessage" OtherKey="NotificationMessageID" Type="tbl_NotificationMessage" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter2" Member="tbl_NotificationMessage2" ThisKey="WarningMaxMessage" OtherKey="NotificationMessageID" Type="tbl_NotificationMessage" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter3" Member="tbl_NotificationMessage3" ThisKey="WarningMinMessage" OtherKey="NotificationMessageID" Type="tbl_NotificationMessage" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter4" Member="tbl_NotificationMessage4" ThisKey="PossibleMaxMessage" OtherKey="NotificationMessageID" Type="tbl_NotificationMessage" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter5" Member="tbl_NotificationMessage5" ThisKey="PossibleMinMessage" OtherKey="NotificationMessageID" Type="tbl_NotificationMessage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_AnalyseParameterType" Member="tbl_AnalyseParameterTypes">
+    <Type Name="tbl_AnalyseParameterType">
+      <Column Name="AnalyseParameterTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Contact" Member="tbl_Contacts">
+    <Type Name="tbl_Contact">
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Family" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_Contact_tbl_CustomerContact" Member="tbl_CustomerContacts" ThisKey="ContactID" OtherKey="ContactID" Type="tbl_CustomerContact" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Culture" Member="tbl_Cultures">
+    <Type Name="tbl_Culture">
+      <Column Name="CultureID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_Culture_tbl_NotificationMessage" Member="tbl_NotificationMessages" ThisKey="CultureID" OtherKey="CultureID" Type="tbl_NotificationMessage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Customer" Member="tbl_Customers">
+    <Type Name="tbl_Customer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_Customer_tbl_ProcedureParameter" Member="tbl_ProcedureParameters" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_Customer_tbl_CustomerContact" Member="tbl_CustomerContacts" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_CustomerContact" />
+      <Association Name="tbl_Customer_tbl_DailyAnalyseReport" Member="tbl_DailyAnalyseReports" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_DailyAnalyseReport" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CustomerContact" Member="tbl_CustomerContacts">
+    <Type Name="tbl_CustomerContact">
+      <Column Name="CustomerContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Post" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_Contact_tbl_CustomerContact" Member="tbl_Contact" ThisKey="ContactID" OtherKey="ContactID" Type="tbl_Contact" IsForeignKey="true" />
+      <Association Name="tbl_Customer_tbl_CustomerContact" Member="tbl_Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DailyAnalyseReport" Member="tbl_DailyAnalyseReports">
+    <Type Name="tbl_DailyAnalyseReport">
+      <Column Name="DailyAnalyseReportID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProcedureParameterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_Customer_tbl_DailyAnalyseReport" Member="tbl_Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="tbl_Customer" IsForeignKey="true" />
+      <Association Name="tbl_ProcedureParameter_tbl_DailyAnalyseReport" Member="tbl_ProcedureParameter" ThisKey="ProcedureParameterID" OtherKey="ProcedureParameterID" Type="tbl_ProcedureParameter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_NotificationMessage" Member="tbl_NotificationMessages">
+    <Type Name="tbl_NotificationMessage">
+      <Column Name="NotificationMessageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CultureID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortText" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FullText" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter" Member="tbl_ProcedureParameters" ThisKey="NotificationMessageID" OtherKey="DangerMaxMessage" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter1" Member="tbl_ProcedureParameters1" ThisKey="NotificationMessageID" OtherKey="DangerMinMessage" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter2" Member="tbl_ProcedureParameters2" ThisKey="NotificationMessageID" OtherKey="WarningMaxMessage" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter3" Member="tbl_ProcedureParameters3" ThisKey="NotificationMessageID" OtherKey="WarningMinMessage" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter4" Member="tbl_ProcedureParameters4" ThisKey="NotificationMessageID" OtherKey="PossibleMaxMessage" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_NotificationMessage_tbl_ProcedureParameter5" Member="tbl_ProcedureParameters5" ThisKey="NotificationMessageID" OtherKey="PossibleMinMessage" Type="tbl_ProcedureParameter" />
+      <Association Name="tbl_Culture_tbl_NotificationMessage" Member="tbl_Culture" ThisKey="CultureID" OtherKey="CultureID" Type="tbl_Culture" IsForeignKey="true" />
+      <Association Name="tbl_NotificationMessageType_tbl_NotificationMessage" Member="tbl_NotificationMessageType" ThisKey="Type" OtherKey="NotificationMessageTypeID" Type="tbl_NotificationMessageType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_NotificationMessageType" Member="tbl_NotificationMessageTypes">
+    <Type Name="tbl_NotificationMessageType">
+      <Column Name="NotificationMessageTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_NotificationMessageType_tbl_NotificationMessage" Member="tbl_NotificationMessages" ThisKey="NotificationMessageTypeID" OtherKey="Type" Type="tbl_NotificationMessage" />
+    </Type>
+  </Table>
+</Database>

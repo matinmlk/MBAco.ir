@@ -1,0 +1,7 @@
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\bin\Debug\MBAco.DAL.dll.config
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\bin\Debug\MBAco.DAL.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\bin\Debug\MBAco.DAL.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\obj\Debug\MBAco.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\obj\Debug\MBAco.DAL.dll
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\obj\Debug\MBAco.DAL.pdb
+C:\Users\Sima\Desktop\mbaco.ir\mbaco\MBAco.DAL\obj\Debug\MBAco.DAL.csprojAssemblyReference.cache
