@@ -38,6 +38,6 @@ __MBAco BLL.Test - Business Logic Layer Tests__
 
 Unit tests needed to be implemented for the BLL.
 
-__MBAco - MVC.Net Web project __
+__MBAco - MVC.Net Web project__
 
 Presentation and mostly front-end coding without any data manipulation for represent to users.
