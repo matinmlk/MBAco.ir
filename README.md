@@ -21,7 +21,7 @@ Important task in this layer is creating database object of each table or stored
 
 The dbml file inside the project is available in pdf format from this address. this project used Linq to SQL to connect and run queries on the backend side. Most of the classes are inherited from the base class to perform the CRUD operation and they are partial for special queries needed in different interactions.
 
-https://github.com/matinmlk/MBAco.ir/blob/master/mbaco%20database%20design.pdf - automatic!
+https://github.com/matinmlk/MBAco.ir/blob/master/mbaco%20database%20design.pdf
 
 #MBAco BLL - Business Logic Layer 
 
