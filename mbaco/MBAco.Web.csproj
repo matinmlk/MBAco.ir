@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEBCA5BF-F03A-4BC6-9A8E-4AA37AB0D8BE}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mbaco</RootNamespace>
+    <AssemblyName>mbaco</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnalyseParameterController.cs" />
+    <Compile Include="Controllers\AnalyseParameterTypeController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CustomerContactController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DailyAnalyseReportController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportDailyReportController.cs" />
+    <Compile Include="Controllers\NotificationMessageController.cs" />
+    <Compile Include="Controllers\NotificationMessageTypeController.cs" />
+    <Compile Include="Controllers\ProcedureDailyReportController.cs" />
+    <Compile Include="Controllers\ProcedureParameterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\aedirt2012.txt" />
+    <Content Include="App_Data\cahmaroon.txt" />
+    <Content Include="App_Data\clmaroon.txt" />
+    <Content Include="App_Data\TFemaroon.txt" />
+    <Content Include="App_Data\productmaroon.txt" />
+    <Content Include="App_Data\fclmaroon.txt" />
+    <Content Include="App_Data\m-alkmaroon.txt" />
+    <Content Include="App_Data\thmaroon.txt" />
+    <Content Include="App_Data\ecmaroon.txt" />
+    <Content Include="App_Data\phmaroon.txt" />
+    <Content Include="App_Data\usdirt2012.txt" />
+    <Content Include="App_Data\usdirt2013.txt" />
+    <Content Include="Content\customer.css" />
+    <Content Include="Content\datatable\back_disabled.png" />
+    <Content Include="Content\datatable\back_enabled.png" />
+    <Content Include="Content\datatable\back_enabled_hover.png" />
+    <Content Include="Content\datatable\forward_disabled.png" />
+    <Content Include="Content\datatable\forward_enabled.png" />
+    <Content Include="Content\datatable\forward_enabled_hover.png" />
+    <Content Include="Content\datatable\sort_asc.png" />
+    <Content Include="Content\datatable\sort_asc_disabled.png" />
+    <Content Include="Content\datatable\sort_both.png" />
+    <Content Include="Content\datatable\sort_desc.png" />
+    <Content Include="Content\datatable\sort_desc_disabled.png" />
+    <Content Include="Content\demo_table.css" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\file.gif" />
+    <Content Include="Content\images\folder-closed.gif" />
+    <Content Include="Content\images\folder.gif" />
+    <Content Include="Content\images\minus.gif" />
+    <Content Include="Content\images\mix.png" />
+    <Content Include="Content\images\plus.gif" />
+    <Content Include="Content\images\rtl-file.gif" />
+    <Content Include="Content\images\rtl-folder-closed.gif" />
+    <Content Include="Content\images\rtl-folder.gif" />
+    <Content Include="Content\images\rtl-treeview-black-c.gif" />
+    <Content Include="Content\images\rtl-treeview-black-e.gif" />
+    <Content Include="Content\images\rtl-treeview-black-lc.gif" />
+    <Content Include="Content\images\rtl-treeview-black-le.gif" />
+    <Content Include="Content\images\rtl-treeview-black-line.gif" />
+    <Content Include="Content\images\rtl-treeview-default-c.gif" />
+    <Content Include="Content\images\rtl-treeview-default-e.gif" />
+    <Content Include="Content\images\rtl-treeview-default-lc.gif" />
+    <Content Include="Content\images\rtl-treeview-default-le.gif" />
+    <Content Include="Content\images\rtl-treeview-default-line.gif" />
+    <Content Include="Content\images\rtl-treeview-gray-c.gif" />
+    <Content Include="Content\images\rtl-treeview-gray-e.gif" />
+    <Content Include="Content\images\rtl-treeview-gray-lc.gif" />
+    <Content Include="Content\images\rtl-treeview-gray-le.gif" />
+    <Content Include="Content\images\rtl-treeview-gray-line.gif" />
+    <Content Include="Content\images\rtl-treeview-red-c.gif" />
+    <Content Include="Content\images\rtl-treeview-red-e.gif" />
+    <Content Include="Content\images\rtl-treeview-red-lc.gif" />
+    <Content Include="Content\images\rtl-treeview-red-le.gif" />
+    <Content Include="Content\images\rtl-treeview-red-line.gif" />
+    <Content Include="Content\images\treeview-black-line.gif" />
+    <Content Include="Content\images\treeview-black.gif" />
+    <Content Include="Content\images\treeview-default-line.gif" />
+    <Content Include="Content\images\treeview-default.gif" />
+    <Content Include="Content\images\treeview-famfamfam-line.gif" />
+    <Content Include="Content\images\treeview-famfamfam.gif" />
+    <Content Include="Content\images\treeview-gray-line.gif" />
+    <Content Include="Content\images\treeview-gray.gif" />
+    <Content Include="Content\images\treeview-red-line.gif" />
+    <Content Include="Content\images\treeview-red.gif" />
+    <Content Include="Scripts\highcharts-more.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Content\jquery.treeview.css" />
+    <Content Include="Content\themes\base\images\Pages\actions-bg.png" />
+    <Content Include="Content\themes\base\images\Pages\admin-icon.png" />
+    <Content Include="Content\themes\base\images\Pages\buttons-background.png" />
+    <Content Include="Content\themes\base\images\Pages\head-menu-top.png" />
+    <Content Include="Content\themes\base\images\Pages\header-bg.png" />
+    <Content Include="Content\themes\base\images\Pages\header-bg0.png" />
+    <Content Include="Content\themes\base\images\Pages\Home.png" />
+    <Content Include="Content\themes\base\images\Pages\langbox-left.png" />
+    <Content Include="Content\themes\base\images\Pages\langbox-mid.png" />
+    <Content Include="Content\themes\base\images\Pages\langbox-right.png" />
+    <Content Include="Content\themes\base\images\Pages\list-breadcrumb-bg.png" />
+    <Content Include="Content\themes\base\images\Pages\list-icon.png" />
+    <Content Include="Content\themes\base\images\Pages\login-icon.png" />
+    <Content Include="Content\themes\base\images\Pages\login-title-background.png" />
+    <Content Include="Content\themes\base\images\Pages\login.png" />
+    <Content Include="Content\themes\base\images\Pages\Logout.png" />
+    <Content Include="Content\themes\base\images\Pages\module-background.png" />
+    <Content Include="Content\themes\base\images\Pages\top-actions-bg.png" />
+    <Content Include="Content\themes\icon\basicsettings.png" />
+    <Content Include="Content\themes\icon\currancy.png" />
+    <Content Include="Content\themes\icon\items.png" />
+    <Content Include="Content\themes\icon\ofp.png" />
+    <Content Include="Content\themes\icon\users.png" />
+    <Content Include="Scripts\highstock.js" />
+    <Content Include="Scripts\exporting.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="Scripts\highstock.src.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.sparkline.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-cc.all.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\mbaco.js" />
+    <Content Include="Views\AnalyseParameterType\Create.aspx" />
+    <Content Include="Views\AnalyseParameterType\Delete.aspx" />
+    <Content Include="Views\AnalyseParameterType\Details.aspx" />
+    <Content Include="Views\AnalyseParameterType\Edit.aspx" />
+    <Content Include="Views\AnalyseParameterType\Index.aspx" />
+    <Content Include="Views\AnalyseParameter\Create.aspx" />
+    <Content Include="Views\AnalyseParameter\Delete.aspx" />
+    <Content Include="Views\AnalyseParameter\Details.aspx" />
+    <Content Include="Views\AnalyseParameter\Edit.aspx" />
+    <Content Include="Views\AnalyseParameter\Index.aspx" />
+    <Content Include="Views\Contact\Create.aspx" />
+    <Content Include="Views\Contact\Delete.aspx" />
+    <Content Include="Views\Contact\Details.aspx" />
+    <Content Include="Views\Contact\Edit.aspx" />
+    <Content Include="Views\Contact\Index.aspx" />
+    <Content Include="Views\CustomerContact\Create.aspx" />
+    <Content Include="Views\CustomerContact\Delete.aspx" />
+    <Content Include="Views\CustomerContact\Details.aspx" />
+    <Content Include="Views\CustomerContact\Edit.aspx" />
+    <Content Include="Views\CustomerContact\Index.aspx" />
+    <Content Include="Views\Customer\Monitor.aspx" />
+    <Content Include="Views\Customer\Create.aspx" />
+    <Content Include="Views\Customer\Delete.aspx" />
+    <Content Include="Views\Customer\Details.aspx" />
+    <Content Include="Views\Customer\Edit.aspx" />
+    <Content Include="Views\Customer\Index.aspx" />
+    <Content Include="Views\DailyAnalyseReport\AddParameter.aspx" />
+    <Content Include="Views\DailyAnalyseReport\ApprovedIndex.aspx" />
+    <Content Include="Views\DailyAnalyseReport\DeleteAll.aspx" />
+    <Content Include="Views\DailyAnalyseReport\MaterialsReport.aspx" />
+    <Content Include="Views\DailyAnalyseReport\CorrosionReport.aspx" />
+    <Content Include="Views\DailyAnalyseReport\MicrobialReport.aspx" />
+    <Content Include="Views\DailyAnalyseReport\ProcedureMiniChart.aspx" />
+    <Content Include="Views\DailyAnalyseReport\UnApprovedIndex.aspx" />
+    <Content Include="Views\DailyAnalyseReport\ProcedureChart.aspx" />
+    <Content Include="Views\DailyAnalyseReport\Create.aspx" />
+    <Content Include="Views\DailyAnalyseReport\Delete.aspx" />
+    <Content Include="Views\DailyAnalyseReport\Details.aspx" />
+    <Content Include="Views\DailyAnalyseReport\Edit.aspx" />
+    <Content Include="Views\DailyAnalyseReport\Index.aspx" />
+    <Content Include="Views\ImportDailyReport\Import.aspx" />
+    <Content Include="Views\ImportDailyReport\Index.aspx" />
+    <Content Include="Views\NotificationMessageType\Create.aspx" />
+    <Content Include="Views\NotificationMessageType\Delete.aspx" />
+    <Content Include="Views\NotificationMessageType\Details.aspx" />
+    <Content Include="Views\NotificationMessageType\Edit.aspx" />
+    <Content Include="Views\NotificationMessageType\Index.aspx" />
+    <Content Include="Views\NotificationMessage\Create.aspx" />
+    <Content Include="Views\NotificationMessage\Delete.aspx" />
+    <Content Include="Views\NotificationMessage\Details.aspx" />
+    <Content Include="Views\NotificationMessage\Edit.aspx" />
+    <Content Include="Views\NotificationMessage\Index.aspx" />
+    <Content Include="Views\ProcedureParameter\Create.aspx" />
+    <Content Include="Views\ProcedureParameter\Delete.aspx" />
+    <Content Include="Views\ProcedureParameter\Details.aspx" />
+    <Content Include="Views\ProcedureParameter\Edit.aspx" />
+    <Content Include="Views\ProcedureParameter\Index.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site1.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MBAco.BLL\MBAco.BLL.csproj">
+      <Project>{4B93B539-7914-46A6-A82B-0EABD61CCCBD}</Project>
+      <Name>MBAco.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MBAco.BusinessModel\MBAco.BusinessModel.csproj">
+      <Project>{999AA2AC-B310-431A-B1FE-021D6FC67F0F}</Project>
+      <Name>MBAco.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MBAco.Common\MBAco.Common.csproj">
+      <Project>{8686AFE1-6A68-4590-8AE0-1C2207D111EF}</Project>
+      <Name>MBAco.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EmptySite.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LoginSite.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libman.json" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2671</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MBAco.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

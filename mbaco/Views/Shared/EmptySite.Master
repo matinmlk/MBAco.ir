@@ -1,0 +1,391 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <script src="<%: Url.Content("~/Scripts/jquery-1.6.2.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery-ui-1.8.11.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/highstock.src.js") %>"></script>
+    <script src="<%: Url.Content("~/Scripts/highcharts-more.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/exporting.js") %>"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.dataTables.min.js") %>"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.sparkline.js") %>"></script>
+    <link href="<%: Url.Content("~/Content/demo_table.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%: Url.Content("~/Content/customer.css") %>" rel="stylesheet" type="text/css" />
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
+    <style type="text/css">
+        div
+        {
+            text-align: inherit;
+        }
+        h1
+        {
+            font-family: B Koodak;
+            font-size: 1.4em;
+            color: #666;
+            line-height: 2em;
+            border-bottom: 1px solid #eee;
+        }
+        h2
+        {
+            font-family: B Koodak;
+            font-size: 1.4em;
+            color: #2067a8;
+        }
+        body
+        {
+            font-family: Tahoma;
+            font-size: smaller;
+            color: #636363;
+        }
+        th
+        {
+            background: #000;
+            color: #fff;
+        }
+        .pageHolder
+        {
+            margin: 0 auto;
+            width: 930px;
+            padding: 10px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+<div class="pageHolder rtl">
+       <a id="Logo" href="/home?lang=fa"><img src="http://mbaco.ir/images/logo-fa.png" /> </a>
+         <div id="clock" style="width: 130px; height: 130px; float: left;direction:ltr;position:relative; top:-35px; background:#eee;">
+                        </div>
+    </div>
+
+</header>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="/">صفحه نخست</a></li>
+                    </ul>
+                    <ul class="nav">
+                        <li><a href="http://cs.mbaco.ir/cs-manual.pdf">راهنمای نرم افزار</a></li>
+                    </ul>
+                    <ul class="nav">
+                        <li><a href="mailto:info@mbaco.ir">انتقاد یا پیشنهاد</a></li>
+                    </ul>
+                    <%--<ul class="nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">سرویسها&nbsp;<b
+                            class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="clientarea.php?action=products">سرویس های من</a></li>
+                                <li class="divider"></li>
+                                <li><a href="cart.php">سفارش سرویس جدید</a></li>
+                                <li><a href="cart.php?gid=addons">دیدن افزودنی های موجود</a></li>
+                            </ul>
+                        </li>
+                    </ul>--%>
+                    <ul class="nav pull-left" style="float: left; margin-left: -115px;">
+                        <li>
+                            <%: Html.ActionLink("خروج از سیستم", "LogOff", "Account")%></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">نام
+                            کاربری,
+                            <%: Context.User.Identity.Name %>!&nbsp;</a> </li>
+                    </ul>
+                </div>
+                <!-- /.nav-collapse -->
+            </div>
+        </div>
+        <div id="dialog-message" title="خوش آمدید">
+            <p>
+                با سلام و عرض خیر مقدم به شما
+            </p>
+            <p>
+                نسخه نرم افزاری که مشاهده می نمائید، ویرایش اول آن می باشد.
+            </p>
+            <p>
+                خواهشمند است با نظرات خود ما را در تهیه نسخه نهایی یاری فرمایید.
+            </p>
+            <p>
+                <a href="http://cs.mbaco.ir/cs-manual.pdf">راهنمای استفاده از نرم افزار</a>
+            </p>
+        </div>
+        <!-- /navbar-inner -->
+    </div>
+    <div style="text-align: right; width: 950px; margin: 0 auto; background: #fff;">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+    <div style="text-align: center">
+        <br />
+        <p>
+            قدرت گرفته توسط <a href="http://loopdesign.ir">loopdesign.ir</a></p>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+
+            /**
+            * Get the current time
+            */
+            function getNow() {
+                var now = new Date();
+
+                return {
+                    hours: now.getHours() + now.getMinutes() / 60,
+                    minutes: now.getMinutes() * 12 / 60 + now.getSeconds() * 12 / 3600,
+                    seconds: now.getSeconds() * 12 / 60
+                };
+            };
+
+            /**
+            * Pad numbers
+            */
+            function pad(number, length) {
+                // Create an array of the remaining length +1 and join it with 0's
+                return new Array((length || 2) + 1 - String(number).length).join(0) + number;
+            }
+
+            var now = getNow();
+
+            // Create the chart
+            $('#clock').highcharts({
+
+                chart: {
+                    type: 'gauge',
+                    plotBackgroundColor: null,
+                    plotBackgroundImage: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false,
+                    height: 180
+                },
+                exporting: {
+
+                    buttons: {
+                        exportButton: {
+                            enabled: false
+                        },
+                        printButton: {
+                            enabled: false
+                        }
+
+                    }
+                },
+                credits: {
+                    enabled: false
+                },
+
+                title: {
+                    text: ''
+                },
+
+                pane: {
+                    background: [{
+                        // default background
+                    }, {
+                        // reflex for supported browsers
+                        backgroundColor: Highcharts.svg ? {
+                            radialGradient: {
+                                cx: 0.5,
+                                cy: -0.4,
+                                r: 1.9
+                            },
+                            stops: [
+		    			[0.5, 'rgba(255, 255, 255, 0.2)'],
+		    			[0.5, 'rgba(200, 200, 200, 0.2)']
+		    		]
+                        } : null
+                    }]
+                },
+
+                yAxis: {
+                    labels: {
+                        distance: -20
+                    },
+                    min: 0,
+                    max: 12,
+                    lineWidth: 0,
+                    showFirstLabel: false,
+
+                    minorTickInterval: 'auto',
+                    minorTickWidth: 1,
+                    minorTickLength: 5,
+                    minorTickPosition: 'inside',
+                    minorGridLineWidth: 0,
+                    minorTickColor: '#666',
+
+                    tickInterval: 1,
+                    tickWidth: 2,
+                    tickPosition: 'inside',
+                    tickLength: 10,
+                    tickColor: '#666',
+                    title: {
+                        text: 'mbaco.ir',
+                        style: {
+                            color: '#BBB',
+                            fontWeight: 'normal',
+                            fontSize: '8px',
+                            lineHeight: '10px'
+                        },
+                        y: 10
+                    }
+                },
+
+                tooltip: {
+                    formatter: function () {
+                        return this.series.chart.tooltipText;
+                    }
+                },
+
+                series: [{
+                    data: [{
+                        id: 'hour',
+                        y: now.hours,
+                        dial: {
+                            radius: '60%',
+                            baseWidth: 4,
+                            baseLength: '95%',
+                            rearLength: 0
+                        }
+                    }, {
+                        id: 'minute',
+                        y: now.minutes,
+                        dial: {
+                            baseLength: '95%',
+                            rearLength: 0
+                        }
+                    }, {
+                        id: 'second',
+                        y: now.seconds,
+                        dial: {
+                            radius: '100%',
+                            baseWidth: 1,
+                            rearLength: '20%'
+                        }
+                    }],
+                    animation: false,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }]
+            },
+
+            // Move
+	                        function (chart) {
+	                            setInterval(function () {
+	                                var hour = chart.get('hour'),
+	                                    minute = chart.get('minute'),
+	                                    second = chart.get('second'),
+	                                    now = getNow(),
+	                                // run animation unless we're wrapping around from 59 to 0
+	                                    animation = now.seconds == 0 ?
+	                                        false :
+	                                        {
+	                                            easing: 'easeOutElastic'
+	                                        };
+
+	                                // Cache the tooltip text
+	                                chart.tooltipText =
+				                        pad(Math.floor(now.hours), 2) + ':' +
+	    		                        pad(Math.floor(now.minutes * 5), 2) + ':' +
+	    		                        pad(now.seconds * 5, 2);
+
+	                                hour.update(now.hours, true, animation);
+	                                minute.update(now.minutes, true, animation);
+	                                second.update(now.seconds, true, animation);
+
+	                            }, 1000);
+
+	                        });
+        });
+
+        // Extend jQuery with some easing (copied from jQuery UI)
+        $.extend($.easing, {
+            easeOutElastic: function (x, t, b, c, d) {
+                var s = 1.70158; var p = 0; var a = c;
+                if (t == 0) return b; if ((t /= d) == 1) return b + c; if (!p) p = d * .3;
+                if (a < Math.abs(c)) { a = c; var s = p / 4; }
+                else var s = p / (2 * Math.PI) * Math.asin(c / a);
+                return a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * (2 * Math.PI) / p) + c + b;
+            }
+        });
+    </script>
+
+        <script type="text/javascript">
+            function clearMenus() {
+                $(".dropdown").removeClass("open");
+            }
+
+            function createCookie(name, value, days) {
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    var expires = "; expires=" + date.toGMTString();
+                } else var expires = "";
+                document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+            }
+
+            function readCookie(name) {
+                var nameEQ = escape(name) + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return unescape(c.substring(nameEQ.length, c.length));
+                }
+                return null;
+            }
+
+
+            $(document).ready(function () {
+                $("html").click(function () { clearMenus(); });
+
+                $(".dropdown").click(function () {
+                    $(".dropdown").removeClass("open");
+                    if ($(this).hasClass("open"))
+                        $(this).removeClass("open");
+                    else
+                        $(this).addClass("open");
+                    return false;
+                });
+
+                $(".dropdown-menu a").click(function () {
+                    window.location.href = $(this).attr("href");
+                });
+
+                //            $(function () {
+                //                $('html').on('click.dropdown.data-api', clearMenus)
+                //                $('body').on('click.dropdown', '.dropdown form', function (e) { e.stopPropagation() })
+                //                .on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+                //            });
+
+
+                if (readCookie("show") == 1) {
+                    $("#dialog-message").hide();
+                }
+                else {
+
+                    $("#dialog-message").dialog({
+                        modal: true,
+                        buttons: {
+                            تأیید: function () { $(this).dialog("close"); },
+                            "تأیید و عدم نمایش": function () {
+                                $(this).dialog("close");
+                                createCookie("show", 1, 10);
+                            }
+                        }
+                    });
+                }
+
+
+            });
+
+    </script>
+
+</body>
+</html>
