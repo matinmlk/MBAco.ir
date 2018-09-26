@@ -1,4 +1,4 @@
-# Mohafezan Behboud Ab (MBA) Company 
+# MBACo
 Water Treatment for Chemical plant Customer System Monitoring.
 More information about the Mohafezan Company is available on mbaco.co website.
 
